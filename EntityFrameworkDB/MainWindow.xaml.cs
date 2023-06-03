@@ -42,11 +42,10 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext())
             {
-                var grad = new Grade() { GradeName = "A" };
-
+                var grad = new Grade() { GradeName = gradeTextbox.Text, Section=sectionTextBox.Text };
                 ctx.Grades.Add(grad);
                 ctx.SaveChanges();
-                OutputWindow.Text = "it worked";
+                OutputWindow.Text = "grade " + grad.GradeName+" added with section "+grad.Section;
             }
         }
     }

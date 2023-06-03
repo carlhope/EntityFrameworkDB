@@ -17,8 +17,8 @@
         <Label Content="Section" HorizontalAlignment="Left" Margin="464,116,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="studentNametextbox" HorizontalAlignment="Left" Margin="144,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="StudentGradeIDtextbox" HorizontalAlignment="Left" Margin="144,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="569,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="569,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="gradeTextbox" HorizontalAlignment="Left" Margin="569,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="sectionTextBox" HorizontalAlignment="Left" Margin="569,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="DOBdatepicker" HorizontalAlignment="Left" Margin="144,101,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="studentQueryButton" Content="Query Student" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Height="28" Width="104"/>
         <Button x:Name="gradeQueryButton" Content="Query Grade" HorizontalAlignment="Left" Margin="621,212,0,0" VerticalAlignment="Top" Height="28" Width="90" RenderTransformOrigin="0.302,0.62"/>
