@@ -7,34 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="500,0,0,0" VerticalAlignment="Center" Height="28" Width="85"/>
+        <Button x:Name="GradeAddButton" Content="Add Grade" HorizontalAlignment="Left" Margin="464,212,0,0" VerticalAlignment="Top" Height="28" Width="85" Click="GradeAddButton_Click"/>
         <TextBlock x:Name="OutputWindow" HorizontalAlignment="Center" Height="174" Margin="0,250,0,0" TextWrapping="Wrap" Text="TextBlock///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" VerticalAlignment="Top" Width="780"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Height="28" Width="66" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="144,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="StudentID" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="32" Width="84">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.111"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="21,62,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="21,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="464,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="464,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="464,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="464,155,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="144,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="137,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="144,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="569,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="578,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="569,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="585,155,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="StudentAddButton" Content="Add Student" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Height="28" Width="101" Click="Button_Click"/>
+        <Label Content="StudentName" HorizontalAlignment="Left" Margin="21,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="DateOfBirth" HorizontalAlignment="Left" Margin="21,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Grade ID" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top"/>
+        <Label Content="GradeName" HorizontalAlignment="Left" Margin="464,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Section" HorizontalAlignment="Left" Margin="464,116,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentNametextbox" HorizontalAlignment="Left" Margin="144,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentGradeIDtextbox" HorizontalAlignment="Left" Margin="144,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="569,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="569,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="DOBdatepicker" HorizontalAlignment="Left" Margin="144,101,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="studentQueryButton" Content="Query Student" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Height="28" Width="104"/>
+        <Button x:Name="gradeQueryButton" Content="Query Grade" HorizontalAlignment="Left" Margin="621,212,0,0" VerticalAlignment="Top" Height="28" Width="90" RenderTransformOrigin="0.302,0.62"/>
 
     </Grid>
 </Window>

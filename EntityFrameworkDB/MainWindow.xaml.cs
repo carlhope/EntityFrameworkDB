@@ -29,9 +29,22 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext())
             {
-                var stud = new Student() { StudentName = "Bill" };
+                var stud = new Student() { StudentName = studentNametextbox.Text, DateOfBirth=Convert.ToDateTime(DOBdatepicker.Text)};
 
                 ctx.Students.Add(stud);
+                ctx.SaveChanges();
+                var addedStudentOutputString = " Student " + stud.StudentName + " with the Date of Birth " + stud.DateOfBirth.Value.ToString("dd/MM/yyyy") + " has been successfully added to the database";
+                OutputWindow.Text = addedStudentOutputString;
+            }
+        }
+
+        private void GradeAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var ctx = new SchoolContext())
+            {
+                var grad = new Grade() { GradeName = "A" };
+
+                ctx.Grades.Add(grad);
                 ctx.SaveChanges();
                 OutputWindow.Text = "it worked";
             }
