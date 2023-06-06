@@ -1,1 +1,2 @@
 # EntityFrameworkDB
+This project is a practice using Entity Framework code first approach. A form is provided using WPF, to allow users to add to the database, and query the database. This project is incomplete. I intend on adding further functionality to the form, by allowing updating and removing of database entries. I also intend on further developing the database to allow many-to-many relationship between student and course.
