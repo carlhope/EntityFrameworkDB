@@ -7,21 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="GradeAddButton" Content="Add Grade" HorizontalAlignment="Left" Margin="464,212,0,0" VerticalAlignment="Top" Height="28" Width="85" Click="GradeAddButton_Click"/>
+        <Button x:Name="GradeAddButton" Content="Add Grade" HorizontalAlignment="Left" Margin="536,0,0,0" VerticalAlignment="Center" Height="28" Width="85" Click="GradeAddButton_Click"/>
         <TextBlock x:Name="OutputWindow" HorizontalAlignment="Center" Height="174" Margin="0,250,0,0" TextWrapping="Wrap" Text="TextBlock///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////" VerticalAlignment="Top" Width="780"/>
-        <Button x:Name="StudentAddButton" Content="Add Student" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Height="28" Width="101" Click="Button_Click"/>
+        <Button x:Name="StudentAddButton" Content="Add Student" HorizontalAlignment="Left" Margin="154,0,0,0" VerticalAlignment="Center" Height="28" Width="100" Click="Button_Click"/>
         <Label Content="StudentName" HorizontalAlignment="Left" Margin="21,62,0,0" VerticalAlignment="Top"/>
         <Label Content="DateOfBirth" HorizontalAlignment="Left" Margin="21,103,0,0" VerticalAlignment="Top"/>
         <Label Content="Grade ID" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top"/>
-        <Label Content="GradeName" HorizontalAlignment="Left" Margin="464,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Section" HorizontalAlignment="Left" Margin="464,116,0,0" VerticalAlignment="Top"/>
+        <Label Content="GradeName" HorizontalAlignment="Left" Margin="433,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Section" HorizontalAlignment="Left" Margin="433,103,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="studentNametextbox" HorizontalAlignment="Left" Margin="144,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="StudentGradeIDtextbox" HorizontalAlignment="Left" Margin="144,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="gradeTextbox" HorizontalAlignment="Left" Margin="569,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="sectionTextBox" HorizontalAlignment="Left" Margin="569,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="gradeTextbox" HorizontalAlignment="Left" Margin="512,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="sectionTextBox" HorizontalAlignment="Left" Margin="512,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="DOBdatepicker" HorizontalAlignment="Left" Margin="144,101,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="studentQueryButton" Content="Query Student" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Height="28" Width="104"/>
-        <Button x:Name="gradeQueryButton" Content="Query Grade" HorizontalAlignment="Left" Margin="621,212,0,0" VerticalAlignment="Top" Height="28" Width="90" RenderTransformOrigin="0.302,0.62"/>
+        <Button x:Name="studentQueryButton" Content="Query student name" HorizontalAlignment="Left" Margin="276,66,0,0" VerticalAlignment="Top" Height="18" Width="116" Click="studentQueryButton_Click"/>
+        <Button x:Name="gradeQueryButton" Content="Query Grade" HorizontalAlignment="Left" Margin="659,62,0,0" VerticalAlignment="Top" Height="28" Width="90" RenderTransformOrigin="0.302,0.62"/>
+        <Button x:Name="QueryDOBButton" Content="Query DOB" HorizontalAlignment="Left" Height="22" Margin="276,103,0,0" VerticalAlignment="Top" Width="116"/>
 
     </Grid>
 </Window>
