@@ -29,7 +29,8 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext())
             {
-                var stud = new Student() { StudentName = studentNametextbox.Text, DateOfBirth=Convert.ToDateTime(DOBdatepicker.Text)};
+                DateTime DOB = Convert.ToDateTime(DOBdatepicker.Text);
+                var stud = new Student() { StudentName = studentNametextbox.Text, DateOfBirth=DOB };
 
                 ctx.Students.Add(stud);
                 ctx.SaveChanges();
@@ -51,7 +52,27 @@ namespace EntityFrameworkDB
 
         private void studentQueryButton_Click(object sender, RoutedEventArgs e)
         {
+            using (var ctx = new SchoolContext())
+            {
+                var student = ctx.Students
+                                .Where(s => s.StudentName == studentNametextbox.Text)
+                                .FirstOrDefault<Student>();
+                if (student != null)
+                { OutputWindow.Text = Convert.ToString(student.StudentName); }
+                else { OutputWindow.Text ="student "+studentNametextbox.Text+" not found"; }
+            }
+        }
 
+        private void gradeQueryButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var ctx = new SchoolContext()) 
+            {
+                var Grade = ctx.Grades
+                    .Where(g =>g.GradeName == gradeTextbox.Text)
+                    .FirstOrDefault<Grade>();
+                if (Grade != null) { OutputWindow.Text = Convert.ToString(Grade.GradeName); }
+                else { OutputWindow.Text="grade not found"; }
+            }
         }
     }
 }
