@@ -48,5 +48,10 @@ namespace EntityFrameworkDB
                 OutputWindow.Text = "grade " + grad.GradeName+" added with section "+grad.Section;
             }
         }
+
+        private void studentQueryButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
