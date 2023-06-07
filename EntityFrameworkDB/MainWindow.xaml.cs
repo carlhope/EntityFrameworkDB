@@ -50,7 +50,7 @@ namespace EntityFrameworkDB
             }
         }
 
-        private void studentQueryButton_Click(object sender, RoutedEventArgs e)
+          private void studentQueryButton_Click(object sender, RoutedEventArgs e)
         {
             using (var ctx = new SchoolContext())
             {
@@ -74,5 +74,8 @@ namespace EntityFrameworkDB
                 else { OutputWindow.Text="grade not found"; }
             }
         }
+    }
+}
+
     }
 }
