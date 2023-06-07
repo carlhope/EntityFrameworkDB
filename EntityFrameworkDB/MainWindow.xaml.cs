@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,12 +26,19 @@ namespace EntityFrameworkDB
             InitializeComponent();
         }
 
+        public String CleanInput(string strIn)
+        {
+            // Replace invalid characters with empty strings.
+            return Regex.Replace(strIn, @"[^\w\.@-]", "");
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             using (var ctx = new SchoolContext())
             {
+                var studentTextboxValue = CleanInput(studentNametextbox.Text);
                 DateTime DOB = Convert.ToDateTime(DOBdatepicker.Text);
-                var stud = new Student() { StudentName = studentNametextbox.Text, DateOfBirth=DOB };
+                var stud = new Student() { StudentName = studentTextboxValue, DateOfBirth=DOB };
 
                 ctx.Students.Add(stud);
                 ctx.SaveChanges();
@@ -43,7 +51,9 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext())
             {
-                var grad = new Grade() { GradeName = gradeTextbox.Text, Section=sectionTextBox.Text };
+                var gradeNameTextboxvalue = CleanInput(gradeTextbox.Text);
+                var sectionTextboxValue=CleanInput(sectionTextBox.Text);
+                var grad = new Grade() { GradeName = gradeNameTextboxvalue, Section=sectionTextboxValue };
                 ctx.Grades.Add(grad);
                 ctx.SaveChanges();
                 OutputWindow.Text = "grade " + grad.GradeName+" added with section "+grad.Section;
@@ -54,8 +64,9 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext())
             {
+                var studentNameTextboxValue = CleanInput(studentNametextbox.Text);
                 var student = ctx.Students
-                                .Where(s => s.StudentName == studentNametextbox.Text)
+                                .Where(s => s.StudentName == studentNameTextboxValue)
                                 .FirstOrDefault<Student>();
                 if (student != null)
                 { OutputWindow.Text = Convert.ToString(student.StudentName); }
@@ -67,8 +78,9 @@ namespace EntityFrameworkDB
         {
             using (var ctx = new SchoolContext()) 
             {
+                var gradeTextboxValue = CleanInput(gradeTextbox.Text);
                 var Grade = ctx.Grades
-                    .Where(g =>g.GradeName == gradeTextbox.Text)
+                    .Where(g =>g.GradeName == gradeTextboxValue)
                     .FirstOrDefault<Grade>();
                 if (Grade != null) { OutputWindow.Text = Convert.ToString(Grade.GradeName); }
                 else { OutputWindow.Text="grade not found"; }
