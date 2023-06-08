@@ -14,7 +14,9 @@ namespace EntityFrameworkDB
         public string? StudentName { get; set; }
         public DateTime? DateOfBirth { get; set; }
 
-        public Grade? Grade { get; set; }
+        public IList<StudentGrade>? StudentGrades { get; set; }
+
+        
     }
     public class Grade
     {
@@ -22,19 +24,35 @@ namespace EntityFrameworkDB
         public string? GradeName { get; set; }
         public string? Section { get; set; }
 
-        public ICollection<Student>? Students { get; set; }
+        public IList<StudentGrade>? StudentGrades { get; set; }
+
+
+    }
+
+    public class StudentGrade
+    {
+        public int StudentID { get; set; }
+        public Student? Student { get; set; }
+        public int GradeID { get; set; }
+        public Grade? Grade { get; set; }
     }
 
     public class SchoolContext : DbContext
     {
 
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Grade> Grades { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;Encrypt=false");  
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudentGrade>().HasKey(sg => new {sg.StudentID,sg.GradeID});
+        }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<StudentGrade> StudentGrades { get; set; }
     }
 
 }
