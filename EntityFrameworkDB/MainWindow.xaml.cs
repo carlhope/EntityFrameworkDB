@@ -60,21 +60,6 @@ namespace EntityFrameworkDB
             }
         }
 
-        /*   private void studentQueryButton_Click(object sender, RoutedEventArgs e)
-         {
-             using (var ctx = new SchoolContext())
-             {
-                 var studentNameTextboxValue = CleanInput(studentNametextbox.Text);
-                 var student = ctx.Students
-                                 .Where(s => s.StudentName == studentNameTextboxValue)
-                                 .FirstOrDefault<Student>();
-                 if (student != null)
-                 { OutputWindow.Text = Convert.ToString(student.StudentName); }
-                 else { OutputWindow.Text ="student "+studentNametextbox.Text+" not found"; }
-             }
-         }
-        */
-
         private void studentQueryButton_Click(object sender, RoutedEventArgs e)
         {
             using (var ctx = new SchoolContext())
